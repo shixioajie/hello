@@ -1,0 +1,70 @@
+git 版本控制系统 
+
+Git基本常用命令如下：
+
+配置全局用户名：
+1------【git config --global user.name 'zhang123'
+git config --global user.email'zhangyt_heb@163.com'】
+
+2-------创建一个空的文件夹
+mkdir XX (创建一个空目录 XX指目录名)
+
+git 查看是否安装成功
+
+git -version 查看版本号
+
+3-----在空文件夹中执行git init 
+在文件夹中直接打开git bash here  ：把当前的目录变成可以管理的git仓库，生成隐藏.git文件。
+
+------------------------------------------------
+4---创建一个文件  1.txt 2.doc 
+
+5---执行 git add 和 git commit 配合使用   
+
+	git add 文件名 将文件添加进管理仓库
+
+	git commit -m'提交注释';
+
+6---git status 查看当前仓库的状态 
+------------------------------------------------
+git log 查看日志 
+
+git log --pretty=oneline 格式化查看日志信息
+
+git reset --hard HEAD^ 回退到上一版版本 (如果想回退到100个版本，使用git reset –hard HEAD~100 )
+
+git reflog   查看历史记录的版本号id
+
+cat XX         查看XX文件内容
+
+git checkout -- XX  把XX文件在工作区的修改全部撤销。
+
+git rm XX          删除XX文件
+
+
+创建： ssh-keygen -t rsa -C"274950020@qq.com"
+
+
+把本地仓库的内容推送到gitHub仓库 ：
+1、关联：git remote add origin https://github.com/booleanstr/testgit.git
+2、git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库
+	【以后使用 git push origin master 命令进行推送】
+
+从远程仓库克隆内容到本地仓库
+git clone https://github.com/booleanstr/testgit2   testgit2代表远程仓库的名称  
+
+---------------------
+git checkout –b dev  创建dev分支 并切换到dev分支上
+git branch  查看当前所有的分支
+git checkout master 切换回master分支
+git merge dev    在当前的分支上合并dev分支
+git branch –d dev 删除dev分支
+git branch name  创建分支
+git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作
+git stash list 查看所有被隐藏的文件列表
+git stash apply 恢复被隐藏的文件，但是内容不删除
+git stash drop 删除文件
+git stash pop 恢复文件的同时 也删除文件
+git remote 查看远程库的信息
+git remote –v 查看远程库的详细信息
+git push origin master  Git会把master分支推送到远程库对应的远程分支上
